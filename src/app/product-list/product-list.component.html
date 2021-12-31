@@ -1,0 +1,21 @@
+<a class="m-auto" routerLink="/product/create"><button class="btn btn-primary">New</button></a>
+<table class="table col-sm-6">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Description</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products, index as i">
+    <th scope="row">{{i+1}}</th>
+    <td><a routerLink="/product/view/{{product.id}}">{{product.name}}</a></td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><button  class="btn btn-primary" (click)="deleteById(product.id)" >Delete</button></td>
+  </tr>
+  </tbody>
+</table>

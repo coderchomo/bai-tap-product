@@ -1,0 +1,26 @@
+<form [formGroup]="rfCreateForm"
+      (ngSubmit)="onSubmit()" >
+  <div class="mb-3">
+    <label  class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name" >
+    <div id="emailHelp" class="form-text" *ngIf="rfCreateForm.controls['name'].errors && rfCreateForm.controls['name'].dirty">
+      <span class="label label-danger" style="color: darkred" *ngIf="rfCreateForm.controls['name'].errors['required']">Vui long nhap ten san pham</span>
+      <span class="label label-danger" style="color: darkred" *ngIf="rfCreateForm.controls['name'].errors['minlength']">Vui long nhap toi thieu 7 ky tu</span>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="text" class="form-control" formControlName="price">
+    <div  class="form-text"  *ngIf="rfCreateForm.controls['price'].errors && rfCreateForm.controls['price'].dirty">
+      <span class="label label-danger" style="color: darkred" *ngIf="rfCreateForm.controls['price'].errors['required']">Vui long nhap gia san pham</span>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Description</label>
+    <input type="text" class="form-control" formControlName="description" >
+    <div  class="form-text" *ngIf="rfCreateForm.controls['description'].errors && rfCreateForm.controls['description'].dirty">
+      <span class="label label-danger" style="color: darkred" *ngIf="rfCreateForm.controls['description'].errors['required']">Vui long nhap trang thai</span>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

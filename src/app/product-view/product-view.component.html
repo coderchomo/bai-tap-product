@@ -1,0 +1,26 @@
+
+  <div class="mb-3" *ngIf="product" >
+    <label  class="form-label">Id</label>
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="product.id"
+     disabled>
+  </div>
+  <div class="mb-3" *ngIf="product" >
+    <label  class="form-label">Name</label>
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="product.name" >
+  </div>
+  <div class="mb-3" *ngIf="product">
+    <label class="form-label">Price</label>
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="product.price" >
+  </div>
+  <button class="btn btn-primary" type="submit" (click)="onSubmit()">Save</button>
+
+  <a routerLink="/"><button class="btn btn-primary">Home</button></a>
+
+
+
